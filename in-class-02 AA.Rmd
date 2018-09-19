@@ -1,9 +1,9 @@
 # In-Class: September 19, 2018
 
-'''{r}
+```{r}
 library(dplyr)
 read.table(rnf6080.dat)
-'''
+```
 
 ## Part 1 (You can do this with or without dplyr)
 
