@@ -97,22 +97,39 @@ flights%>%
 
 ### Arranging Rows
 3. Use arrange() to order the data by year, month and day
+flights%>%
+  arrange(year,month,day)
 4. Use desc() to arrange flights by arrival delay.
-
+flights%>%
+  arrange(desc(arr_delay))
 
 ### Select
-5. Select columns containing data information.
+5. Select columns containing date information.
+  flights%>%
+    select(1:3)
 6. Select columns including only plane information.
+
+flights%>%
+    select(4:19)
+    
 7. Rename tailnum to tail_num
+flights%>%
+  select(tail_num=tailnum)
 
 
 ### Mutating Rows
 8. Create a variable called gain which describes the difference between arrival delap and departure delay.
-9. Create a variable called speed which is distance over time in hours.
+  gainflights<-flights%>%
+    mutate(gain=arr_delay-dep_delay)
 
+9. Create a variable called speed which is distance over time in hours.
+  flights%>%
+    mutate(speed=distance/hour)
 
 ###Summarise
 10. Summarise the average delay for all flights.
+  flights%>%
+    summarise(avgdelay=mean(dep_delay))
 
 ## Overall Questions
 
