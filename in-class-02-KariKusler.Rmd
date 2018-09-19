@@ -43,27 +43,8 @@ The command re-names the columns.
 
 ```{r}
 library(dplyr)
-
-
-   
-rain.df$daily <- rwoSums(rain.df,na.rm=TRUE)
-
-rain.df %>%
-  mutate(daily=rowSums(rain.df[,4:27]))
-head(rain.df)
+rain.df<-mutate(rain.df, daily=rowSums(rain.df[,c(4:27)]))
 hist(rain.df$daily)
-
-rain.tbl <- tbl_df(rain.df)
-
-rain$daily <- mutate(apply(rowsums,rain.tbl,c[,1:23]))
-head(rain$daily)
-
-apply(rain.df,2,sum,1:23)
-
-
-mutate(rain.df, daily = sum(1:24))
-rain.df$daily <- sum(rain.df,1:24)
-head(rain.df)
 ```
 
 8. Create a new data frame rain.df.fixed that takes the original and fixes it for the apparent flaw you have discovered. Having done this, produce a new histogram with the corrected data and explain why this is more reasonable.
