@@ -91,6 +91,8 @@ The `dplyr` package uses verbs to perform data manipulation.
 1. Filter all flights on your birthday.
 filter(flights, month==10, day==5)
 2. Filter all flights in rows 567 - 589
+flights%>%
+  filter(row_number() %in% 567:589)
 
 
 ### Arranging Rows
