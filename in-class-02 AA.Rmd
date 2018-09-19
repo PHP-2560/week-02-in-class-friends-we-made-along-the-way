@@ -49,10 +49,15 @@ rain.tbl
 rain.daily<-mutate(rain.tbl, daily=rowSums(rain.tbl[,c(4:27)]))
 hist(rain.daily$daily)
 
-#the data has a bunch of negative values, which makes no sense. There can;t 
+#the data has a bunch of negative values, which makes no sense. There can't be negative rainfall 
 
 
 8. Create a new data frame rain.df.fixed that takes the original and fixes it for the apparent flaw you have discovered. Having done this, produce a new histogram with the corrected data and explain why this is more reasonable.
+
+rain.df<-filter(rain.daily, daily>0)
+hist(rain.df$daily)
+
+#We removed data with negative rainfall, so this makes more sense
 
 ## Part 2
 ### New York City Flights 13
@@ -64,6 +69,7 @@ hist(rain.daily$daily)
 
 
 ```
+install.packages(nycflights13)
 library(nycflights13)
 library(dplyr)
 flights
@@ -83,6 +89,7 @@ The `dplyr` package uses verbs to perform data manipulation.
 ### Filtering Rows
 
 1. Filter all flights on your birthday.
+filter(flights, month==10, day==5)
 2. Filter all flights in rows 567 - 589
 
 
