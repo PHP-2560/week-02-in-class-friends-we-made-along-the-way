@@ -5,7 +5,7 @@ Have one person fill in the names of who is doing this:
 1. Alexander Adia
 2. Kari Kusler  
 3. Meghan Peterson
-4. Maydelis Minaya
+
 
 # In-Class
 
